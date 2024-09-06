@@ -58,6 +58,12 @@ impl Emulator {
 			return Self::Neovim;
 		}
 
+		#[cfg(windows)]
+		let is_windows_terminal = crate::win_utils::is_microsoft();
+		if is_windows_terminal {
+			return Self::Microsoft;
+		}
+
 		let vars = [
 			("KITTY_WINDOW_ID", Self::Kitty),
 			("KONSOLE_VERSION", Self::Konsole),

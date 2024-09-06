@@ -10,6 +10,7 @@ mod kitty;
 mod kitty_old;
 mod sixel;
 mod ueberzug;
+mod win_utils;
 
 pub use adapter::*;
 use chafa::*;
